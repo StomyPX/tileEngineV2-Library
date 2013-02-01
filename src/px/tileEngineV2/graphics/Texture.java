@@ -1,5 +1,12 @@
 package px.tileEngineV2.graphics;
 
-public class Texture {
+/**Wrapper class representing a texture
+ * @author Michael Stopa */
+public abstract class Texture {
     
+    // ++++ ++++ Game Logic ++++ ++++
+    
+    public void update(long elapsedTime) {
+        
+    }
 }

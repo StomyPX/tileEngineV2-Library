@@ -15,4 +15,7 @@ public abstract class Renderer {
     
     public abstract void drawText(
             String text, Vector3f location, Vector2f size, Vector4f color);
+    
+    /**Start the FPSAnimator driving the renderer. */
+    public abstract void start();
 }
