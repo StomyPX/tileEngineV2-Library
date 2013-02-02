@@ -80,11 +80,15 @@ public abstract class GameCore {
     
     // ++++ ++++ Accessors ++++ ++++
     
-    public Renderer getRenderer() {
-        return renderer;
-    }
-    
     public static GameCore getInstance() {
         return instance;
+    }
+    
+    public World getWorld() {
+        return world;
+    }
+    
+    public Renderer getRenderer() {
+        return renderer;
     }
 }

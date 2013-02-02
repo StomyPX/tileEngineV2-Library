@@ -15,6 +15,7 @@ public abstract class World {
 	// ++++ ++++ Data ++++ ++++
 	
 	protected LinkedList<Map> maps;
+	protected Camera camera = new Camera();
     
 	// ++++ ++++ Initialization ++++ ++++
 	
@@ -39,8 +40,7 @@ public abstract class World {
 	
 	// ++++ ++++ Accessors ++++ ++++
 	
-	public Matrix4f getViewTransform() {
-	    //TODO actually calculate View transform.
-	    return new Matrix4f();
+	public Camera getCamera() {
+	    return camera;
 	}
 }

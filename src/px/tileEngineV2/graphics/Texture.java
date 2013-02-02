@@ -15,4 +15,9 @@ public abstract class Texture {
     public Texture(TextureCache cache, String filename) {
         texCoordTransform = new Matrix3f();
     }
+
+    public Matrix3f getTransform() {
+        //TODO allow matrix tranforms here.
+        return new Matrix3f();
+    }
 }
