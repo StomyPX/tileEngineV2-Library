@@ -2,6 +2,8 @@ package px.tileEngineV2.world;
 
 import java.util.LinkedList;
 
+import org.lwjgl.util.vector.Matrix4f;
+
 import px.tileEngineV2.graphics.Renderer;
 
 /**Contatiner class for all objects loaded in the current gamestate, all map data and
@@ -21,9 +23,7 @@ public abstract class World {
 	    
 	}
 	
-//	public World() {
-//		//TODO Load world data from XML
-//	}
+	//TODO Open world from XML
 	
 	// ++++ ++++ Update Loop ++++ ++++
 	
@@ -34,6 +34,13 @@ public abstract class World {
 	// ++++ ++++ Drawing Loop ++++ ++++
 	
 	public void draw(Renderer renderer) {
-	    //TODO Draw EVERYTHING
+	    //TODO Draw EVERYTHING (update/paint GLCanvas?)
+	}
+	
+	// ++++ ++++ Accessors ++++ ++++
+	
+	public Matrix4f getViewTransform() {
+	    //TODO actually calculate View transform.
+	    return new Matrix4f();
 	}
 }

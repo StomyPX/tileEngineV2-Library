@@ -10,7 +10,7 @@ public abstract class GameCore {
     
     // ++++ ++++ Data ++++ ++++
     
-    private boolean isStarted = false;
+    public static GameCore instance;
     
     /**Current World */
     protected World world;
@@ -42,10 +42,12 @@ public abstract class GameCore {
      * System.out. */
     protected boolean isDebuggingCore = false;
     
+    private boolean isStarted = false;
+    
     // ++++ ++++ Initialization ++++ ++++
     
     public GameCore() {
-        //TODO load settings
+        instance = this;
     }
     
     public void assignRenderer(Renderer renderer) {
@@ -74,5 +76,15 @@ public abstract class GameCore {
      * @param elapsedTime Number of milliseconds since last update cycle. */
     public void update(long elapsedTime) {
         world.update(elapsedTime);
+    }
+    
+    // ++++ ++++ Accessors ++++ ++++
+    
+    public Renderer getRenderer() {
+        return renderer;
+    }
+    
+    public static GameCore getInstance() {
+        return instance;
     }
 }
