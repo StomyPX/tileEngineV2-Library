@@ -1,9 +1,5 @@
 package px.tileEngineV2.world;
 
-import java.util.LinkedList;
-
-import org.lwjgl.util.vector.Matrix4f;
-
 import px.tileEngineV2.graphics.Renderer;
 
 /**Contatiner class for all objects loaded in the current gamestate, all map data and
@@ -14,7 +10,7 @@ public abstract class World {
 	
 	// ++++ ++++ Data ++++ ++++
 	
-	protected LinkedList<Map> maps;
+	protected Map map;
 	protected Camera camera = new Camera();
     
 	// ++++ ++++ Initialization ++++ ++++

@@ -16,7 +16,7 @@ public abstract class Renderer {
     public LinkedList<Animation> animations;
     
     public abstract void drawQuad(
-            Texture texture, Vector3f location, Matrix4f model, Vector4f tint);
+            Texture texture, Matrix4f model, float depth, Vector4f tint);
     
     public abstract void drawText(
             String text, Vector3f location, Vector2f size, Vector4f color);
