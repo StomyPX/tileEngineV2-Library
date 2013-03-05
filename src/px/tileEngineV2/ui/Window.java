@@ -10,12 +10,24 @@ import px.tileEngineV2.graphics.Texture;
  * @author Michael Stopa */
 public abstract class Window {
     
+    // ++++ ++++ Enums ++++ ++++
+    
+    public enum HorzAlign {
+        LEFT,
+        CENTER,
+        RIGHT
+    }
+    
+    public enum VertAlign {
+        TOP,
+        CENTER,
+        BOTTOM
+    }
+    
     // ++++ ++++ Data ++++ ++++
     
-    //Location of the menu on screen from center (0,0) to corners (from -1,-1 to 1,1)
+    //Location of the menu on screen from center (0,0) to corners (from -50,-50 to 50, 50)
     protected Vector2f location;
-    //Size of textbox in screen coordinates (-1, -1 to 1, 1)
-    protected Vector2f size;
     //Text displayed in menu
     protected String text;
     //Color to tint the edge colors and text
@@ -25,11 +37,10 @@ public abstract class Window {
     
     // ++++ ++++ Initialization ++++ ++++
     
-    public Window(String text, Vector2f location, Vector2f size, Vector4f tint,
+    public Window(String text, Vector2f location, Vector4f tint,
             Texture menuTexture) {
         this.text = text;
         this.location = location;
-        this.size = size;
         this.tint = tint;
     }
 }
