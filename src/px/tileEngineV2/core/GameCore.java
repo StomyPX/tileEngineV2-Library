@@ -1,6 +1,7 @@
 package px.tileEngineV2.core;
 
 import px.tileEngineV2.graphics.Renderer;
+import px.tileEngineV2.graphics.Texture;
 import px.tileEngineV2.world.World;
 
 /**An abstract template for platform-specific implementations of a GameCore, as visible
@@ -90,5 +91,9 @@ public abstract class GameCore {
     
     public Renderer getRenderer() {
         return renderer;
+    }
+    
+    public Texture getTexture(String filename) {
+        return renderer.getTextureCache().getTexture(filename);
     }
 }
