@@ -5,6 +5,7 @@ import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
 
+import px.tileEngineV2.actors.Actor;
 import px.tileEngineV2.core.GameCore;
 import px.tileEngineV2.graphics.Renderer;
 import px.tileEngineV2.graphics.Texture;
@@ -71,7 +72,13 @@ public abstract class Window {
     
     public void draw() {
         //Top left corner
-        Matrix4f tlc = new Matrix4f();
+        Matrix4f tlc = Actor.modelTransform(
+                new Vector2f(location.x - (size.x/2), location.y + (size.y/2)), 
+                0f, new Vector2f(1f, 1f));
         renderer.drawQuadUi(cornerTexture, tlc, 0f, horzAlign, vertAlign, edgeColor);
+        Matrix4f trc = Actor.modelTransform(
+                new Vector2f(location.x + (size.x/2), location.y + (size.y/2)), 
+                1f, new Vector2f(1f, 1f));
+        renderer.drawQuadUi(cornerTexture, trc, 0f, horzAlign, vertAlign, edgeColor);
     }
 }
